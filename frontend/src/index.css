@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #12172b;
+  --color-ink-soft: #1b2140;
+  --color-paper: #f3efe4;
+  --color-paper-dim: #e9e3d3;
+  --color-brass: #c88a3d;
+  --color-brass-light: #e0ab63;
+  --color-slate: #5c6470;
+  --color-offwhite: #ede8db;
+
+  --font-display: "Space Grotesk", "IBM Plex Sans", sans-serif;
+  --font-body: "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+}
+
+/* Subtle blueprint grid used behind the hero section only */
+.blueprint-grid {
+  background-image:
+    linear-gradient(rgba(237, 234, 219, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(237, 234, 219, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

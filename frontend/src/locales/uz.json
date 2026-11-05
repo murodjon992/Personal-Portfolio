@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "about": "Men haqimda",
+    "projects": "Loyihalar",
+    "services": "Xizmatlar",
+    "contact": "Bog'lanish"
+  },
+  "hero": {
+    "greeting": "Salom, men",
+    "role": "Fullstack dasturchi",
+    "tagline": "6 yildan buyon dasturlash olamida sayohatimni boshlaganman ustozi yo'q dasturchiman yillar davomida qobiliyatlarimni rivojlantirib insonlar muammosiga yechimlar topishda izlanib kelayapman",
+    "cta": "Loyihalarni ko'rish",
+    "cta_secondary": "Bog'lanish"
+  },
+  "about": {
+    "heading": "Men haqimda",
+    "years_suffix": "yillik tajriba",
+    "skills_heading": "Ishlatadigan texnologiyalarim"
+  },
+  "projects": {
+    "heading": "Loyihalar",
+    "subheading": "Noldan yaratib, ishga tushirgan tizimlarim",
+    "visit": "Saytga o'tish",
+    "empty": "Hozircha loyihalar qo'shilmagan."
+  },
+  "services": {
+    "heading": "Xizmatlar",
+    "subheading": "Nima taklif qilaman va qancha turadi",
+    "highlighted": "Ko'p tanlanadi",
+    "empty": "Hozircha xizmatlar qo'shilmagan."
+  },
+  "contact": {
+    "heading": "Bog'lanish",
+    "subheading": "Loyihangiz haqida yozing — tez orada javob beraman",
+    "name_label": "Ismingiz",
+    "contact_label": "Email, telefon yoki Telegram",
+    "message_label": "Xabaringiz",
+    "submit": "Yuborish",
+    "sending": "Yuborilmoqda...",
+    "success": "Xabaringiz yuborildi, rahmat! Tez orada javob beraman.",
+    "error": "Xatolik yuz berdi. Birozdan so'ng qayta urinib ko'ring yoki to'g'ridan-to'g'ri Telegram orqali yozing.",
+    "direct_heading": "Yoki to'g'ridan-to'g'ri yozing"
+  },
+  "footer": {
+    "rights": "Barcha huquqlar himoyalangan."
+  }
+}

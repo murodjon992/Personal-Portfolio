@@ -1,0 +1,47 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "role": "Fullstack Developer",
+    "tagline": "I started my journey in the world of programming 6 years ago. I am a programmer without a mentor. Over the years, I have been developing my skills and finding solutions to people's problems.",
+    "cta": "View projects",
+    "cta_secondary": "Get in touch"
+  },
+  "about": {
+    "heading": "About me",
+    "years_suffix": "years of experience",
+    "skills_heading": "Technologies I work with"
+  },
+  "projects": {
+    "heading": "Projects",
+    "subheading": "Systems I built and shipped from scratch",
+    "visit": "Visit site",
+    "empty": "No projects added yet."
+  },
+  "services": {
+    "heading": "Services",
+    "subheading": "What I offer and what it costs",
+    "highlighted": "Most chosen",
+    "empty": "No services added yet."
+  },
+  "contact": {
+    "heading": "Get in touch",
+    "subheading": "Tell me about your project — I'll get back to you soon",
+    "name_label": "Your name",
+    "contact_label": "Email, phone, or Telegram",
+    "message_label": "Your message",
+    "submit": "Send",
+    "sending": "Sending...",
+    "success": "Message sent, thank you! I'll reply soon.",
+    "error": "Something went wrong. Try again shortly or message me directly on Telegram.",
+    "direct_heading": "Or reach out directly"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
