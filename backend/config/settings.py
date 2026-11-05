@@ -65,14 +65,15 @@ TEMPLATES = [
 WSGI_APPLICATION = "config.wsgi.application"
 
 # Database
+# Database
 if os.getenv("POSTGRES_HOST"):
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.postgresql",
-            "NAME": os.getenv("POSTGRES_DB", "portfolio"),
-            "USER": os.getenv("POSTGRES_USER", "portfolio"),
-            "PASSWORD": os.getenv("POSTGRES_PASSWORD", "portfolio"),
-            "HOST": os.getenv("POSTGRES_HOST", "db"),
+            "NAME": os.getenv("POSTGRES_DB"),
+            "USER": os.getenv("POSTGRES_USER"),
+            "PASSWORD": os.getenv("POSTGRES_PASSWORD"),
+            "HOST": os.getenv("POSTGRES_HOST"),
             "PORT": os.getenv("POSTGRES_PORT", "5432"),
         }
     }
