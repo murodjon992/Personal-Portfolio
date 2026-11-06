@@ -15,7 +15,7 @@ export default function Services({ services }) {
           {services.map((service) => (
             <div
               key={service.id}
-              className={`py-8 border-b border-ink/10 grid md:grid-cols-[1fr_auto] gap-4 md:gap-10 items-start ${
+              className={`py-7 border-b border-ink/10 grid md:grid-cols-[1fr_auto] gap-4 md:gap-10 items-start ${
                 service.is_highlighted ? "border-l-2 border-l-brass pl-6 -ml-6" : ""
               }`}
             >
