@@ -18,6 +18,11 @@ DEBUG = os.getenv("DEBUG", "1") == "1"
 
 # Xavfsizlik uchun split qilishdan oldin bo'shliqlarni tozalaymiz
 allowed_hosts_env = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1")
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://smdev.uz",
+    "https://www.smdev.uz",
+]
 ALLOWED_HOSTS = [host.strip() for host in allowed_hosts_env.split(",") if host.strip()]
 
 INSTALLED_APPS = [

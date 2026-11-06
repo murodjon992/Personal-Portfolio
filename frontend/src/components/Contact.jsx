@@ -34,7 +34,7 @@ export default function Contact({ profile }) {
                 {t("contact.direct_heading")}
               </h3>
               <ul className="flex flex-col gap-2 text-offwhite/80">
-                {profile.email && <li><a className="hover:text-brass" href={`mailto:${profile.email}`}>{profile.email}</a></li>}
+                {profile.email && <li><a className="hover:text-brass" href="#">{profile.email}</a></li>}
                 {profile.telegram && (
                   <li>
                     <a

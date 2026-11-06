@@ -2,33 +2,26 @@ name: Deploy Portfolio to VPS
 
 on:
   push:
-    branches:
-      - main  # yoki master
+    branches: [ main ] # yoki master
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: Deploy to VPS via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.VPS_IP }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script: |
-            # Loyiha papkasiga o'tish (VPS'dagi yo'lingizni ko'rsating)
-            cd /var/www/portfolio || git clone https://github.com/USERNAME/portfolio.git /var/www/portfolio && cd /var/www/portfolio
-
-            # Oxirgi o'zgarishlarni tortib olish
-            git pull origin main
-
-            # Docker konteynerlarini qayta qurish va ishga tushirish
-            docker compose down
-            docker compose up -d --build
-
-            # Ishlatilmayotgan eski image va keshni tozalash
-            docker image prune -f
+    - name: Deploy to Server via SSH
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.VPS_HOST }}       # VPS IP manzilingiz
+        username: ${{ secrets.VPS_USERNAME }} # masalan: root
+        key: ${{ secrets.VPS_SSH_KEY }}     # SSH Private Key (yoki VPS_PASSWORD)
+        script: |
+          cd ~/portfolio
+          git pull origin main
+          docker compose down
+          docker compose up -d --build
+          docker exec portfolio-backend-1 python manage.py migrate
+          docker exec portfolio-backend-1 python manage.py collectstatic --noinput
