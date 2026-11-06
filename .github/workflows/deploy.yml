@@ -2,26 +2,26 @@ name: Deploy Portfolio to VPS
 
 on:
   push:
-    branches: [ main ] # yoki master
+    branches: [main]
+
+concurrency:
+  group: deploy-portfolio
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Deploy to Server via SSH
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        host: ${{ secrets.VPS_HOST }}       # VPS IP manzilingiz
-        username: ${{ secrets.VPS_USERNAME }} # masalan: root
-        password: ${{ secrets.VPS_PASSWORD }}
-        script: |
-          cd ~/portfolio
-          git pull origin main
-          docker compose down
-          docker compose up -d --build
-          docker exec portfolio-backend-1 python manage.py migrate
-          docker exec portfolio-backend-1 python manage.py collectstatic --noinput
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          script_stop: true
+          script: |
+            cd ~/portfolio
+            git fetch origin main
+            git reset --hard origin/main
+            docker compose up -d --build --remove-orphans
+            docker image prune -f
