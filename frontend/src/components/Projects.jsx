@@ -34,8 +34,9 @@ export default function Projects({ projects }) {
 
               <div>
                 <h3 className="font-display text-2xl mb-3">{project.title}</h3>
+                <h4 className="text-offwhite/90 py-4 m-2">{project.summary}</h4>
                 <p className="text-offwhite/70 leading-relaxed mb-4">
-                  {project.description || project.summary}
+                  {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-5">
                   {project.tech_stack.map((tech) => (
