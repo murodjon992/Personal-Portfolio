@@ -1,7 +1,7 @@
 const API_URL = import.meta.env.VITE_API_URL || "/api";
 
 async function request(path, { lang, ...options } = {}) {
-  const url = new URL(`${API_URL}${path}`);
+  const url = new URL(`${API_URL}${path}`, window.location.origin);
   if (lang) url.searchParams.set("lang", lang);
 
   const res = await fetch(url, {

@@ -19,8 +19,18 @@ export default function App() {
   useEffect(() => {
     const lang = i18n.language;
     fetchProfile(lang).then(setProfile).catch(() => setProfile(null));
-    fetchProjects(lang).then(setProjects).catch(() => setProjects([]));
-    fetchServices(lang).then(setServices).catch(() => setServices([]));
+    fetchProfile(lang).then(setProfile).catch((e) => {
+  console.error("profile:", e);
+  setProfile([]);
+});
+    fetchProjects(lang).then(setProjects).catch((e) => {
+  console.error("projects:", e);
+  setProjects([]);
+});
+    fetchServices(lang).then(setServices).catch((e) => {
+  console.error("servicess:", e);
+  setServices([]);
+});
   }, [i18n.language]);
 
   return (
